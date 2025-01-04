@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PlayPatrol</title>
     <!-- Link to your CSS -->
     <link rel="stylesheet" href="css/styles.css" />
@@ -34,19 +31,39 @@
 
     <!-- Sidebar -->
     <aside id="sidebar" class="sidebar">
-      <nav>
+      <nav class="sidebar-nav">
         <ul>
           <li><a href="#company" onclick="toggleSidebar()">Company</a></li>
           <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
           <!-- Add more links as needed -->
         </ul>
       </nav>
+
+      <!-- Social Media Buttons (Bottom of Sidebar) -->
+      <div class="social-links">
+        <a
+          href="https://www.instagram.com/playpatrol_qa"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-button instagram-button"
+        >
+          Instagram
+        </a>
+        <a
+          href="https://www.linkedin.com/in/lukas-%C3%A5kefeldt-86a055231/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-button linkedin-button"
+        >
+          LinkedIn
+        </a>
+      </div>
     </aside>
 
     <!-- Main Content -->
     <main>
       <section class="hero">
-        <h2>Automating the Tedious, Freeing the fun</h2>
+        <h2>Automating the Tedious, Freeing the Fun</h2>
         <p>Leveraging AI to reduce repetitive tasks in game testing</p>
       </section>
 
@@ -54,8 +71,8 @@
       <section id="company" class="about">
         <h2>About Us</h2>
         <p>
-          We are a small company from Denmark's Technical University with a great interest in
-          Gaming, QA, and AI.
+          We are a small company from Denmark's Technical University with a great
+          interest in Gaming, QA, and AI.
         </p>
       </section>
 
@@ -92,6 +109,22 @@
     </footer>
 
     <!-- JavaScript for sidebar toggle -->
-    <script src="js/script.js"></script>
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const burger = document.getElementById("burger");
+        
+        // Toggle .open on both sidebar and burger
+        sidebar.classList.toggle("open");
+        burger.classList.toggle("open");
+        
+        // Lock scrolling if sidebar is open, unlock if closed
+        if (sidebar.classList.contains("open")) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      }
+    </script>
   </body>
 </html>
