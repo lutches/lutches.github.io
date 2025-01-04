@@ -1,22 +1,26 @@
-/* Global Resets & Base Styles */
-* {
+/* =========================================
+   GLOBAL RESETS & BASE STYLES
+   ========================================= */
+   * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
   
   html,
   body {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    max-height: 100%;
-    overflow-x: hidden;
+    /* Let the page scroll naturally on the Y-axis */
+    width: 100%;
+    min-height: 100%;
     font-family: "Arial", sans-serif;
     color: #ffffff;
   }
   
-  /* Body background gradient */
+  /* Gradient background */
   body {
     background: linear-gradient(to left, navy, black);
+    /* Only hide horizontal overflow, to prevent sticky from breaking */
+    overflow-x: hidden;
   }
   
   /* Remove default link styles */
@@ -25,8 +29,14 @@
     text-decoration: none;
   }
   
-  /* Header */
+  /* =========================================
+     STICKY HEADER
+     ========================================= */
   header {
+    position: sticky; /* or -webkit-sticky for older Safari */
+    top: 0;           /* sticks at the top */
+    z-index: 1000;    /* ensure it's above the sidebar and content */
+    background: linear-gradient(to left, navy, black);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,79 +44,75 @@
     height: 80px;
   }
   
-  /* Logo */
+  /* Logo Image */
   .logo-img {
     height: 60px; /* Adjust as needed */
     display: block;
   }
   
-  /* =====================
-   BURGER MENU STYLES
-   ===================== */
-
-/* The container for the burger icon */
-.burger {
-    position: relative;      /* Important: allows absolute positioning of .lines */
-    width: 35px;             /* Adjust to your liking */
-    height: 24px;            /* Enough height to place 3 lines */
+  /* =========================================
+     BURGER MENU
+     ========================================= */
+  .burger {
+    position: relative;
+    width: 35px;
+    height: 24px;
     cursor: pointer;
-    z-index: 1001;           /* Ensure it stays on top of the sidebar */
+    z-index: 1001; /* So it's on top of the sidebar when open */
     transition: transform 0.3s ease;
   }
   
-  /* Each line of the burger */
   .burger .line {
-    position: absolute;         /* So we can stack them vertically */
-    left: 0;                    /* Align to the left edge */
-    height: 3px;                /* Thickness of each line */
-    width: 100%;                /* Span the full width of .burger */
-    background-color: #fff;     /* Color of the lines */
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
   
-  /* Position each line (top, middle, bottom) */
+  /* Top, middle, bottom lines */
   .burger .line:nth-child(1) {
-    top: 0;      /* Very top line */
+    top: 0;
   }
   .burger .line:nth-child(2) {
-    top: 10px;   /* Middle line */
+    top: 10px;
   }
   .burger .line:nth-child(3) {
-    top: 20px;   /* Bottom line */
+    top: 20px;
   }
   
-  /* ===== When .burger has the .open class, transform lines into an X ===== */
+  /* Transform lines into an X */
   .burger.open .line:nth-child(1) {
-    /* Move top line down to middle, then rotate 45deg */
     transform: translateY(10px) rotate(45deg);
   }
   .burger.open .line:nth-child(2) {
-    /* Hide the middle line */
     opacity: 0;
   }
   .burger.open .line:nth-child(3) {
-    /* Move bottom line up to middle, then rotate -45deg */
     transform: translateY(-10px) rotate(-45deg);
   }
   
-  
-  /* Sidebar */
+  /* =========================================
+     SIDEBAR
+     ========================================= */
   .sidebar {
     position: fixed;
     top: 0;
-    right: -250px; /* Hidden by default */
+    right: -250px; /* hidden by default */
     width: 250px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     transition: right 0.3s ease;
     padding: 2rem 1rem;
     box-sizing: border-box;
-    z-index: 999; /* Under the burger, but above the content */
+    z-index: 999; /* under the header's 1000, but above main content */
   }
   .sidebar.open {
-    right: 0; /* Slide in */
+    right: 0; /* slides in from the right */
   }
+  
   .sidebar nav ul {
     list-style: none;
     padding: 0;
@@ -120,7 +126,9 @@
     font-weight: bold;
   }
   
-  /* Sections */
+  /* =========================================
+     MAIN SECTIONS
+     ========================================= */
   .hero,
   .about,
   .services,
@@ -128,7 +136,8 @@
     padding: 4rem 2rem;
     text-align: center;
   }
-  .hero h1 {
+  
+  .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
@@ -162,11 +171,12 @@
     background-color: #c83a24; /* Hover color */
   }
   
-  /* Footer */
+  /* =========================================
+     FOOTER
+     ========================================= */
   footer {
     text-align: center;
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.5);
-    position: relative; /* Adjust if you want it pinned to the bottom */
   }
   
