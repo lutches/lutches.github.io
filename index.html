@@ -1,29 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, intial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>PlayPatrol</title>
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <a
-      style="
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 14px;
-        font-size: 20px;
-        color: white;
-        text-decoration: none;
-      "
-      href="mailto:info@playpatrol.dk"
-      >Contact</a
-    >
-    <div style="display: flex; justify-content: center; align-items: center; overflow: hidden; margin: 0; padding: 0;">
-      <img src="poster/poster.jpg" style="width: 100%;object-fit: cover;" />
-    </div>
-    
+    <!-- Header / Navbar -->
+    <!-- Header / Navbar -->
+<header>
+  <!-- Logo -->
+  <div class="logo">
+    <a href="index.html">
+      <img
+        src="assets/White/White-text.png"
+        alt="PlayPatrol Logo"
+        class="logo-img"
+      />
+    </a>
+  </div>
+
+  <!-- Hamburger/Burger Menu -->
+  <div id="burger" class="burger" onclick="toggleSidebar()">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+</header>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#company" onclick="toggleSidebar()">Company</a></li>
+          <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
+          <!-- Add more links as needed -->
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero / Intro Section -->
+      <section class="hero">
+        <h2>Automating the Tedious, Freeing the fun</h2>
+        <p>
+          Leveraging AI to reduce repetitive tasks in game testing
+        </p>
+      </section>
+
+      <!-- About / Company Info -->
+      <section id="company" class="about">
+        <h2>About Us</h2>
+        <p>
+          We are a small company coming from Denmarks Tekniske Univeritet with great interest in Gaming, Qa and AI
+
+        </p>
+      </section>
+
+      <!-- Services / Offerings -->
+      <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-card">
+          <h3>Automatic Recoursion Testing</h3>
+          <p>
+            
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Performance testing</h3>
+          <p>
+          </p>
+        </div>
+        <!-- Add more services as needed -->
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <!-- Contact button that opens a mail client -->
+        <button
+          type="button"
+          class="contact-btn"
+          onclick="window.location.href='mailto:info@playpatrol.dk'"
+        >
+          Contact Us
+        </button>
+      </section>
+
+    </main>
+
+    <!-- (Optional) Footer -->
+    <footer>
+      <p>&copy; 2025 PlayPatrol. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for sidebar toggle -->
+    <script src="js/script.js"></script>
   </body>
-  <div class="footer"></div>
 </html>
