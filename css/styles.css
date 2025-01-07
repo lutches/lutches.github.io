@@ -102,7 +102,7 @@ header {
   top: 2rem; /* Start right below the 80px header */
   right: -100%; /* Hidden off-screen by default */
   width: 100%;
-  height: calc(100% - 80px); /* Fill the remaining viewport height */
+  height: calc(100% - 2rem); /* Fill the remaining viewport height */
   background-color: black;
   transition: right 0.3s ease;
   padding: 2rem 1rem;
