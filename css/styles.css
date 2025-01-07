@@ -7,16 +7,20 @@
 
 html,
 body {
-  /* Let the page scroll naturally on the Y-axis */
+  /* Stretch to fill the viewport height */
   width: 100%;
-  min-height: 100%;
+  height: 100%; /* So flex can properly measure height */
   font-family: "Arial", sans-serif;
   color: #ffffff;
-  background-color: black;
+  margin: 0;
+  padding: 0;
 }
 
-/* Gradient background */
+/* Make body a flex container */
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures body fills the screen at least */
   background: linear-gradient(to left, navy, black);
   /* Only hide horizontal overflow, to prevent sticky from breaking */
   overflow-x: hidden;
@@ -104,7 +108,7 @@ header {
   padding: 2rem 1rem;
   box-sizing: border-box;
   z-index: 999; /* Below the burger, but above main content */
-  display: flex;           /* Ensures sidebar can be spaced top-to-bottom */
+  display: flex;           
   flex-direction: column;
   justify-content: space-between;
 }
@@ -155,6 +159,11 @@ header {
   background-color: #0077B5; /* LinkedIn color */
 }
 
+/* MAIN CONTAINER */
+main {
+  flex: 1; /* This tells main to expand and push footer down */
+}
+
 /* MAIN SECTIONS */
 .hero,
 .about,
@@ -202,6 +211,8 @@ header {
 
 /* FOOTER */
 footer {
+  /* Footer remains at bottom if content is short,
+     or scrolls normally if content is tall. */
   text-align: center;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.5);
