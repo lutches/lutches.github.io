@@ -42,7 +42,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  height: 80px;
+  height: 4rem;
 }
 
 /* Logo Image */
@@ -99,7 +99,7 @@ header {
 /* SIDEBAR */
 .sidebar {
   position: fixed;
-  top: 80px; /* Start right below the 80px header */
+  top: 2rem; /* Start right below the 80px header */
   right: -100%; /* Hidden off-screen by default */
   width: 100%;
   height: calc(100% - 80px); /* Fill the remaining viewport height */
@@ -190,7 +190,7 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  padding: 1rem;
+  padding: 2rem 1rem;
   background-color: rgba(60, 60, 60, 0.30);
 }
 
@@ -199,16 +199,32 @@ main {
   color: white;
   max-width: 10rem;
   margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.benefit-card:hover {
+  transform: scale(1.1); /* Slightly increase size (10%) */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for emphasis */
 }
 
 .benefit-icon {
   width: 2rem;
   height: 2rem;
+  transition: transform 0.3s ease; /* Add a smooth transition for icon resizing */
+}
+
+.benefit-card:hover .benefit-icon {
+  transform: scale(1.05); /* Slightly increase icon size on hover (20%) */
 }
 
 .benefit-card p {
   font-size: 0.9rem;
   line-height: 1.4;
+  transition: transform 0.3s ease; /* Add smooth transition to text */
+}
+
+.benefit-card:hover p {
+  transform: scale(1.01); /* Slightly enlarge text on hover */
 }
 
 /* Media query for smaller screens (e.g., tablets and below) */
@@ -218,14 +234,20 @@ main {
   }
 }
 
-
-
 /* Service Cards */
 .service-card {
   background-color: rgba(255, 255, 255, 0.1);
   margin: 1rem;
   padding: 2rem;
   border-radius: 5px;
+  border: 2px solid transparent; 
+  transition: box-shadow 0.3s, border-color 0.3s ;
+  box-shadow: 0 0 10px rgba(240, 78, 48, 0.8); 
+  border-color: rgba(240, 78, 48, 1); 
+}
+
+.service-card:hover {
+  box-shadow: 0 0 20px rgba(240, 78, 48, 0.8);
 }
 
 .service-card p{
@@ -235,6 +257,7 @@ main {
 /* Contact Button */
 .contact-btn {
   background-color: #f04e30; /* Customize color */
+  box-shadow: 0 0 10px rgba(240, 78, 48, 0.8); 
   color: #fff;
   padding: 1rem 2rem;
   border: none;
@@ -246,7 +269,8 @@ main {
 }
 
 .contact-btn:hover {
-  background-color: #c83a24; /* Hover color */
+  background-color: #ff492d; /* Hover color */
+  box-shadow: 0 0 20px rgba(240, 78, 48, 0.8); 
 }
 
 /* FOOTER */
