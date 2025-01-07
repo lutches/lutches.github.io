@@ -168,21 +168,57 @@ main {
 .hero,
 .about,
 .services,
-.contact {
+.contact,
+.benefits {
   padding: 4rem 2rem;
   text-align: center;
 }
 
 .hero h2 {
-  font-size: 2rem;
+  font-size:1.5rem;
   margin-bottom: 1rem;
 }
 
 .hero p {
   font-size: 1.2rem;
   max-width: 600px;
+  color: rgb(200, 200, 200);
   margin: 0 auto;
 }
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  background-color: rgba(60, 60, 60, 0.30);
+}
+
+.benefit-card {
+  text-align: center;
+  color: white;
+  max-width: 10rem;
+  margin: 0 auto;
+}
+
+.benefit-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.benefit-card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Media query for smaller screens (e.g., tablets and below) */
+@media (max-width: 350px) {
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 
 /* Service Cards */
 .service-card {
@@ -190,6 +226,10 @@ main {
   margin: 1rem;
   padding: 2rem;
   border-radius: 5px;
+}
+
+.service-card p{
+  color: rgb(200, 200, 200);
 }
 
 /* Contact Button */
@@ -216,4 +256,12 @@ footer {
   text-align: center;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* COLOR AI */
+.color-ai {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Example gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }

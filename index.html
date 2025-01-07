@@ -33,7 +33,7 @@
     <aside id="sidebar" class="sidebar">
       <nav class="sidebar-nav">
         <ul>
-          <li><a href="#company" onclick="toggleSidebar()">Company</a></li>
+          <li><a href="./about.html" onclick="toggleSidebar()">Company</a></li>
           <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
           <!-- Add more links as needed -->
         </ul>
@@ -63,29 +63,72 @@
     <!-- Main Content -->
     <main>
       <section class="hero">
-        <h2>Automating the Tedious, Freeing the Fun</h2>
-        <p>Leveraging AI to reduce repetitive tasks in game testing</p>
+        <h2>
+          Save Time and Uncover Deeper Insights with
+          <span class="color-ai">AI</span> Bots
+        </h2>
+        <p>
+          Leverage cutting-edge machine learning technology to identify bugs,
+          crashes, performance issues, and execute recursion tests in just
+          seconds. Simplify your testing process and gain actionable insights
+          faster than ever.
+        </p>
       </section>
 
-      <!-- About / Company Info -->
-      <section id="company" class="about">
-        <h2>About Us</h2>
-        <p>
-          We are a small company from Denmark's Technical University with a great
-          interest in Gaming, QA, and AI.
-        </p>
+      <section class="benefits">
+        <div class="benefit-card">
+          <img src="assets/icons/pen.png" alt="Pen Icon" class="benefit-icon" />
+          <p>
+            Your tests, <br />
+            simpler
+          </p>
+        </div>
+        <div class="benefit-card">
+          <img
+            src="assets/icons/lightning.png"
+            alt="Pen Icon"
+            class="benefit-icon"
+          />
+          <p>Faster than<br />real time</p>
+        </div>
+        <div class="benefit-card">
+          <img src="assets/icons/bot.png" alt="Pen Icon" class="benefit-icon" />
+          <p>
+            Parallelize <br />
+            forever
+          </p>
+        </div>
+        <div class="benefit-card">
+          <img src="assets/icons/page.png" alt="Pen Icon" class="benefit-icon" />
+          <p>
+            Structured <br />
+            reports
+          </p>
+        </div>
       </section>
 
       <!-- Services / Offerings -->
       <section class="services">
         <h2>Our Services</h2>
         <div class="service-card">
-          <h3>Automatic Recoursion Testing</h3>
-          <p></p>
+          <h3>
+            Horde Testing: Unleash Thousands of
+            <span class="color-ai">AI</span> Testers
+          </h3>
+          <p>
+            Accelerate your testing by running thousands of AI-driven instances
+            that mimic human behavior with precision. Experience
+            faster-than-real-time gameplay analysis for unparalleled efficiency
+            and accuracy.
+          </p>
         </div>
         <div class="service-card">
-          <h3>Performance Testing</h3>
-          <p></p>
+          <h3>Streamlined Recursion Testing in Seconds</h3>
+          <p>
+            Easily execute recursion tests using straightforward problem
+            descriptions. Save time and achieve reliable results with AI-powered
+            automation, all at lightning speed.
+          </p>
         </div>
         <!-- Add more services as needed -->
       </section>
@@ -113,11 +156,11 @@
       function toggleSidebar() {
         const sidebar = document.getElementById("sidebar");
         const burger = document.getElementById("burger");
-        
+
         // Toggle .open on both sidebar and burger
         sidebar.classList.toggle("open");
         burger.classList.toggle("open");
-        
+
         // Lock scrolling if sidebar is open, unlock if closed
         if (sidebar.classList.contains("open")) {
           document.body.style.overflow = "hidden";

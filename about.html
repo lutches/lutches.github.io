@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayPatrol</title>
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="assets/White/White-text.png"
+            alt="PlayPatrol Logo"
+            class="logo-img"
+          />
+        </a>
+      </div>
+
+      <!-- Hamburger/Burger Menu -->
+      <div id="burger" class="burger" onclick="toggleSidebar()">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#company" onclick="toggleSidebar()">Company</a></li>
+          <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
+          <!-- Add more links as needed -->
+        </ul>
+      </nav>
+
+      <!-- Social Media Buttons (Bottom of Sidebar) -->
+      <div class="social-links">
+        <a
+          href="https://www.instagram.com/playpatrol_qa"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-button instagram-button"
+        >
+          Instagram
+        </a>
+        <a
+          href="https://www.linkedin.com/in/lukas-%C3%A5kefeldt-86a055231/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-button linkedin-button"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </aside>
+    <!-- Main body-->
+
+    <!-- About / Company Info -->
+     <main>
+         <section id="company" class="about">
+           <h2>About Us</h2>
+           <p>
+             We are a small company from Denmark's Technical University with a great
+             interest in Gaming, QA, and AI.
+           </p>
+         </section>
+     </main>
+
+    <footer>
+        <p>&copy; 2025 PlayPatrol. All rights reserved.</p>
+      </footer>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const burger = document.getElementById("burger");
+
+        // Toggle .open on both sidebar and burger
+        sidebar.classList.toggle("open");
+        burger.classList.toggle("open");
+
+        // Lock scrolling if sidebar is open, unlock if closed
+        if (sidebar.classList.contains("open")) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      }
+    </script>
+  </body>
+</html>
