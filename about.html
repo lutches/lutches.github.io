@@ -1,44 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PlayPatrol</title>
-    <!-- Link to your CSS -->
+    <title>About | PlayPatrol</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Additional styling specific to the about page */
+      .about-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      /* Add separation between all immediate children */
+      .about-container > * + * {
+        margin-top: 2rem;
+      }
+      /* Optional styling for subheadings */
+      .about-container h3 {
+        margin-bottom: 0.5rem;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <!-- Logo -->
-      <div class="logo">
-        <a href="index.html">
-          <img
-            src="assets/White/White-text.png"
-            alt="PlayPatrol Logo"
-            class="logo-img"
-          />
-        </a>
-      </div>
+    <!-- Header will be loaded here -->
+    <div id="header-placeholder"></div>
 
-      <!-- Hamburger/Burger Menu -->
-      <div id="burger" class="burger" onclick="toggleSidebar()">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </div>
-    </header>
-
-    <!-- Sidebar -->
+    <!-- Mobile Sidebar Navigation -->
     <aside id="sidebar" class="sidebar">
       <nav class="sidebar-nav">
         <ul>
-          <li><a href="#company" onclick="toggleSidebar()">Company</a></li>
-          <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
-          <!-- Add more links as needed -->
+          <li>
+            <a href="about.html" onclick="toggleSidebar()">Company</a>
+          </li>
+          <li>
+            <a href="#contact" onclick="toggleSidebar()">Contact</a>
+          </li>
         </ul>
       </nav>
-
-      <!-- Social Media Buttons (Bottom of Sidebar) -->
       <div class="social-links">
         <a
           href="https://www.instagram.com/playpatrol_qa"
@@ -58,39 +57,38 @@
         </a>
       </div>
     </aside>
-    <!-- Main body-->
 
-    <!-- About / Company Info -->
-     <main>
-         <section id="company" class="about">
-           <h2>About Us</h2>
-           <p>
-             We are a small company from Denmark's Technical University with a great
-             interest in Gaming, QA, and AI.
-           </p>
-         </section>
-     </main>
+    <!-- Main Content -->
+    <main>
+      <section id="company" class="about">
+        <div class="about-container">
+          <h2>About Us</h2>
+          <p>
+            At PlayPatrol, our bold idea is simple: automate the tedious so that creativity can flourish. We believe AI will transform game development—especially quality assurance.
+          </p>
 
-    <footer>
-        <p>&copy; 2025 PlayPatrol. All rights reserved.</p>
-      </footer>
+          <h3>Our Vision</h3>
+          <p>
+            We aim to redefine QA with intuitive AI agents that empower studios to scale testing as complexity grows, freeing developers to focus on innovative game design.
+          </p>
 
-    <script>
-      function toggleSidebar() {
-        const sidebar = document.getElementById("sidebar");
-        const burger = document.getElementById("burger");
+          <h3>Our Mission</h3>
+          <p>
+            Our mission is to develop digital assistants that mimic human play through familiar interfaces and to partner with industry experts to drive game QA into the future.
+          </p>
 
-        // Toggle .open on both sidebar and burger
-        sidebar.classList.toggle("open");
-        burger.classList.toggle("open");
+          <p>
+            Join us on our journey toward a future where technology liberates creativity and gaming reaches new heights.
+          </p>
+        </div>
+      </section>
+    </main>
 
-        // Lock scrolling if sidebar is open, unlock if closed
-        if (sidebar.classList.contains("open")) {
-          document.body.style.overflow = "hidden";
-        } else {
-          document.body.style.overflow = "";
-        }
-      }
-    </script>
+    <!-- Footer will be loaded here -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts to load header/footer and handle sidebar toggling -->
+    <script src="js/loadHeaderFooter.js"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>

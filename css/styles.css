@@ -7,37 +7,37 @@
 
 html,
 body {
-  /* Stretch to fill the viewport height */
   width: 100%;
-  height: 100%; /* So flex can properly measure height */
+  height: 100%;
   font-family: "Arial", sans-serif;
   color: #ffffff;
   margin: 0;
   padding: 0;
 }
 
-/* Make body a flex container */
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensures body fills the screen at least */
-  background: linear-gradient(to left, navy, black);
-  /* Only hide horizontal overflow, to prevent sticky from breaking */
+  min-height: 100vh;
+  background: #000010;
   overflow-x: hidden;
 }
 
-/* Remove default link styles */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* STICKY HEADER */
+/* HEADER STYLES */
 header {
-  position: sticky; /* or -webkit-sticky for older Safari */
-  top: 0; /* sticks at the top */
-  z-index: 1000; /* ensure it's above the sidebar and content */
-  background: linear-gradient(to left, navy, black);
+  background: black;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Mobile Header (Default) */
+.header-mobile {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,19 +45,24 @@ header {
   height: 4rem;
 }
 
+/* Desktop Header: Hidden by default */
+.header-desktop {
+  display: none;
+}
+
 /* Logo Image */
 .logo-img {
-  height: 60px; /* Adjust as needed */
+  height: 60px;
   display: block;
 }
 
-/* BURGER MENU */
+/* Burger Menu (Mobile Only) */
 .burger {
   position: relative;
   width: 35px;
   height: 24px;
   cursor: pointer;
-  z-index: 1001; /* So it's on top of the sidebar when open */
+  z-index: 1001;
   transition: transform 0.3s ease;
 }
 
@@ -83,7 +88,6 @@ header {
   top: 20px;
 }
 
-/* Transform lines into an X when open */
 .burger.open .line:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
@@ -96,25 +100,25 @@ header {
   transform: translateY(-10px) rotate(-45deg);
 }
 
-/* SIDEBAR */
+/* Mobile Sidebar */
 .sidebar {
   position: fixed;
-  top: 2rem; /* Start right below the 80px header */
-  right: -100%; /* Hidden off-screen by default */
+  top: 2rem;
+  right: -100%;
   width: 100%;
-  height: calc(100% - 2rem); /* Fill the remaining viewport height */
+  height: calc(100% - 2rem);
   background-color: black;
   transition: right 0.3s ease;
   padding: 2rem 1rem;
   box-sizing: border-box;
-  z-index: 999; /* Below the burger, but above main content */
-  display: flex;           
+  z-index: 999;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .sidebar.open {
-  right: 0; /* Slides in from the right */
+  right: 0;
 }
 
 .sidebar nav ul {
@@ -132,39 +136,35 @@ header {
   text-transform: uppercase;
 }
 
-/* Place social links at the bottom of the sidebar, no divider */
 .social-links {
-  display: flex; /* place them in a row */
-  justify-content: center; /* center horizontally */
-  gap: 1rem; /* space between buttons */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
   padding: 1rem;
-  border-top: none; /* remove the divider */
 }
 
+/* Social Buttons */
 .social-button {
-  text-decoration: none;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  display: inline-block;
-  text-align: center;
   font-weight: bold;
+  text-align: center;
 }
 
 .instagram-button {
-  background-color: #E1306C; /* Instagram color */
+  background-color: #E1306C;
 }
 
 .linkedin-button {
-  background-color: #0077B5; /* LinkedIn color */
+  background-color: #0077B5;
 }
 
-/* MAIN CONTAINER */
+/* MAIN CONTENT */
 main {
-  flex: 1; /* This tells main to expand and push footer down */
+  flex: 1;
 }
 
-/* MAIN SECTIONS */
 .hero,
 .about,
 .services,
@@ -175,7 +175,7 @@ main {
 }
 
 .hero h2 {
-  font-size:1.5rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -186,12 +186,13 @@ main {
   margin: 0 auto;
 }
 
+/* BENEFITS SECTION */
 .benefits {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 2rem 1rem;
-  background-color: rgba(60, 60, 60, 0.30);
+  background-color: rgba(60, 60, 60, 0.2);
 }
 
 .benefit-card {
@@ -199,65 +200,64 @@ main {
   color: white;
   max-width: 10rem;
   margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card.open {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(240, 78, 48, 0.8);
 }
 
 .benefit-card:hover {
-  transform: scale(1.1); /* Slightly increase size (10%) */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for emphasis */
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .benefit-icon {
   width: 2rem;
   height: 2rem;
-  transition: transform 0.3s ease; /* Add a smooth transition for icon resizing */
+  transition: transform 0.3s ease;
 }
 
 .benefit-card:hover .benefit-icon {
-  transform: scale(1.05); /* Slightly increase icon size on hover (20%) */
+  transform: scale(1.05);
 }
 
 .benefit-card p {
   font-size: 0.9rem;
   line-height: 1.4;
-  transition: transform 0.3s ease; /* Add smooth transition to text */
+  transition: transform 0.3s ease;
 }
 
 .benefit-card:hover p {
-  transform: scale(1.01); /* Slightly enlarge text on hover */
+  transform: scale(1.01);
 }
 
-/* Media query for smaller screens (e.g., tablets and below) */
-@media (max-width: 350px) {
-  .benefits {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Service Cards */
+/* SERVICE CARDS */
 .service-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  margin: 1rem;
+  background-color: rgba(60, 60, 60, 0.2);
+  margin: 1rem auto; /* Center horizontally */
   padding: 2rem;
   border-radius: 5px;
-  border: 2px solid transparent; 
-  transition: box-shadow 0.3s, border-color 0.3s ;
-  box-shadow: 0 0 10px rgba(240, 78, 48, 0.8); 
-  border-color: rgba(240, 78, 48, 1); 
+  border: 2px solid transparent;
+  max-width: 700px;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 0 10px rgba(240, 78, 48, 0.8);
+  border-color: rgba(240, 78, 48, 1);
 }
 
 .service-card:hover {
   box-shadow: 0 0 20px rgba(240, 78, 48, 0.8);
 }
 
-.service-card p{
+.service-card p {
   color: rgb(200, 200, 200);
 }
 
-/* Contact Button */
+/* CONTACT BUTTON */
 .contact-btn {
-  background-color: #f04e30; /* Customize color */
-  box-shadow: 0 0 10px rgba(240, 78, 48, 0.8); 
+  background-color: #f04e30;
+  box-shadow: 0 0 10px rgba(240, 78, 48, 0.8);
   color: #fff;
   padding: 1rem 2rem;
   border: none;
@@ -269,23 +269,97 @@ main {
 }
 
 .contact-btn:hover {
-  background-color: #ff492d; /* Hover color */
-  box-shadow: 0 0 20px rgba(240, 78, 48, 0.8); 
+  background-color: #ff492d;
+  box-shadow: 0 0 20px rgba(240, 78, 48, 0.8);
 }
 
 /* FOOTER */
 footer {
-  /* Footer remains at bottom if content is short,
-     or scrolls normally if content is tall. */
   text-align: center;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.footer-content {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.footer-content .contact-btn {
+  margin-bottom: 1rem;
+  background-color: #f04e30;
+  box-shadow: 0 0 10px rgba(240, 78, 48, 0.8);
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-content .contact-btn:hover {
+  background-color: #ff492d;
+  box-shadow: 0 0 20px rgba(240, 78, 48, 0.8);
+}
+
 /* COLOR AI */
 .color-ai {
-  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Example gradient */
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+}
+
+/* DESKTOP RESPONSIVE STYLES */
+@media (min-width: 769px) {
+  /* Hide mobile-specific elements */
+  .header-mobile,
+  .burger,
+  .sidebar {
+    display: none;
+  }
+
+  /* Display desktop header */
+  .header-desktop {
+    display: block;
+    position: relative;
+    height: 4rem;
+  }
+
+  /* Center the logo in the header */
+  .header-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Place the navigation on the right */
+  .header-nav {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .header-nav li a {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+/* Additional Responsive Adjustments */
+@media (max-width: 350px) {
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

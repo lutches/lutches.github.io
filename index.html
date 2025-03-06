@@ -4,42 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PlayPatrol</title>
-    <!-- Link to your CSS -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- Header / Navbar -->
-    <header>
-      <!-- Logo -->
-      <div class="logo">
-        <a href="index.html">
-          <img
-            src="assets/White/White-text.png"
-            alt="PlayPatrol Logo"
-            class="logo-img"
-          />
-        </a>
-      </div>
+    <!-- Header will be loaded here -->
+    <div id="header-placeholder"></div>
 
-      <!-- Hamburger/Burger Menu -->
-      <div id="burger" class="burger" onclick="toggleSidebar()">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </div>
-    </header>
-
-    <!-- Sidebar -->
+    <!-- Mobile Sidebar Navigation -->
     <aside id="sidebar" class="sidebar">
       <nav class="sidebar-nav">
         <ul>
-          <li><a href="./about.html" onclick="toggleSidebar()">Company</a></li>
+          <li><a href="about.html" onclick="toggleSidebar()">Company</a></li>
           <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
-          <!-- Add more links as needed -->
         </ul>
       </nav>
-
-      <!-- Social Media Buttons (Bottom of Sidebar) -->
       <div class="social-links">
         <a
           href="https://www.instagram.com/playpatrol_qa"
@@ -74,40 +52,36 @@
           faster than ever.
         </p>
       </section>
+      <section class="hero">
+        <h2>Collaborations</h2>
+        <p>
+          We are always looking for new partners to collaborate with.
+          If you want to test our services, collaborate or become a part of our team. Please reach out to us.</p>
+      </section>
 
       <section class="benefits">
-        <div class="benefit-card">
+        <div id="pen" class="benefit-card" onclick="openBenefitDescription('pen')">
           <img src="assets/icons/pen.png" alt="Pen Icon" class="benefit-icon" />
-          <p>
-            Your tests, <br />
-            simpler
-          </p>
+          <p>Your tests,<br /> simpler</p>
         </div>
         <div class="benefit-card">
           <img
             src="assets/icons/lightning.png"
-            alt="Pen Icon"
+            alt="Lightning Icon"
             class="benefit-icon"
           />
-          <p>Faster than<br />real time</p>
+          <p>Faster than<br /> real time</p>
         </div>
         <div class="benefit-card">
-          <img src="assets/icons/bot.png" alt="Pen Icon" class="benefit-icon" />
-          <p>
-            Parallelize <br />
-            forever
-          </p>
+          <img src="assets/icons/bot.png" alt="Bot Icon" class="benefit-icon" />
+          <p>Parallelize<br /> forever</p>
         </div>
         <div class="benefit-card">
-          <img src="assets/icons/page.png" alt="Pen Icon" class="benefit-icon" />
-          <p>
-            Structured <br />
-            reports
-          </p>
+          <img src="assets/icons/page.png" alt="Page Icon" class="benefit-icon" />
+          <p>Structured<br /> reports</p>
         </div>
       </section>
 
-      <!-- Services / Offerings -->
       <section class="services">
         <h2>Possibilities</h2>
         <div class="service-card">
@@ -117,9 +91,8 @@
           </h3>
           <p>
             Accelerate your testing by running thousands of AI-driven instances
-            that mimic human behavior with precision. Experience
-            faster-than-real-time gameplay analysis for unparalleled efficiency
-            and accuracy.
+            that mimic human behavior with precision. Experience faster-than-real-time
+            gameplay analysis for unparalleled efficiency and accuracy.
           </p>
         </div>
         <div class="service-card">
@@ -130,44 +103,15 @@
             automation, all at lightning speed.
           </p>
         </div>
-        <!-- Add more services as needed -->
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="contact">
-        <!-- Contact button that opens a mail client -->
-        <button
-          type="button"
-          class="contact-btn"
-          onclick="window.location.href='mailto:info@playpatrol.dk'"
-        >
-          Contact Us
-        </button>
+        
       </section>
     </main>
 
-    <!-- (Optional) Footer -->
-    <footer>
-      <p>&copy; 2025 PlayPatrol. All rights reserved.</p>
-    </footer>
+    <!-- Footer will be loaded here -->
+    <div id="footer-placeholder"></div>
 
-    <!-- JavaScript for sidebar toggle -->
-    <script>
-      function toggleSidebar() {
-        const sidebar = document.getElementById("sidebar");
-        const burger = document.getElementById("burger");
-
-        // Toggle .open on both sidebar and burger
-        sidebar.classList.toggle("open");
-        burger.classList.toggle("open");
-
-        // Lock scrolling if sidebar is open, unlock if closed
-        if (sidebar.classList.contains("open")) {
-          document.body.style.overflow = "hidden";
-        } else {
-          document.body.style.overflow = "";
-        }
-      }
-    </script>
+    <!-- Load Header and Footer, then your other scripts -->
+    <script src="js/loadHeaderFooter.js"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
