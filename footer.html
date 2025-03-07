@@ -1,8 +1,24 @@
 <footer id="footer">
   <div class="footer-content">
-    <button type="button" class="contact-btn" onclick="window.location.href='mailto:info@playpatrol.dk'">
-      Contact Us
-    </button>
+
+    <!-- Newsletter Signup (Formspree) -->
+    <div class="newsletter-section">
+      <h3>Subscribe to Our Newsletter</h3>
+      <form action="https://formspree.io/f/xanewbly" method="POST" class="newsletter-form">
+        <!-- Email Input -->
+        <input
+          type="email"
+          id="newsletter-email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+        
+        <!-- Submit Button -->
+        <button type="submit" class="newsletter-submit">Subscribe</button>
+      </form>
+    </div>
+
     <p>&copy; 2025 PlayPatrol. All rights reserved.</p>
   </div>
 </footer>
