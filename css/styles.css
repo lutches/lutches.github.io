@@ -199,8 +199,9 @@ main {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 2rem 1rem;
-  background-color: rgba(60, 60, 60, 0.2);
   justify-items: center;
+  max-width: 800px;
+  margin:auto;
 }
 
 .benefit-card {
