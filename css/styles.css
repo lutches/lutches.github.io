@@ -211,11 +211,6 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.benefit-card.open {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px rgba(240, 78, 48, 0.8);
-}
-
 .benefit-card:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);

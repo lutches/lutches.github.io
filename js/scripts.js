@@ -12,11 +12,3 @@ function toggleSidebar() {
   }
 }
 
-function openBenefitDescription(benefit) {
-  const benefitCard = document.getElementById(benefit);
-  if (!benefitCard) {
-    console.error("No element found with ID:", benefit);
-    return;
-  }
-  benefitCard.classList.toggle("open");
-}
