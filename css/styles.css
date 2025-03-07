@@ -31,8 +31,10 @@ a {
 /* HEADER STYLES */
 header {
   background: black;
-  position: sticky;
+  position: fixed; 
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
 }
 
@@ -136,6 +138,10 @@ header {
   text-transform: uppercase;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .social-links {
   display: flex;
   justify-content: center;
@@ -163,6 +169,7 @@ header {
 /* MAIN CONTENT */
 main {
   flex: 1;
+  padding-top: 4rem;
 }
 
 .hero,

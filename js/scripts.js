@@ -3,10 +3,12 @@ function toggleSidebar() {
   const burger = document.getElementById("burger");
   sidebar.classList.toggle("open");
   burger.classList.toggle("open");
+
   if (sidebar.classList.contains("open")) {
-    document.body.style.overflow = "hidden";
+    // Prevent scrolling
+    document.body.classList.add("no-scroll");
   } else {
-    document.body.style.overflow = "";
+    document.body.classList.remove("no-scroll");
   }
 }
 
