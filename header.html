@@ -1,10 +1,11 @@
+<!-- header.html -->
 <header>
   <!-- Desktop Header: Visible on screens 769px and wider -->
   <div class="header-desktop">
     <nav class="header-nav">
       <ul>
         <li><a href="about.html">Company</a></li>
-        <li><a href="#footer">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="header-logo">
@@ -36,3 +37,13 @@
     </div>
   </div>
 </header>
+
+<!-- Move the sidebar here, below the header -->
+<aside id="sidebar" class="sidebar">
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a href="about.html" onclick="toggleSidebar()">Company</a></li>
+      <li><a href="contact.html" onclick="toggleSidebar()">Contact</a></li>
+    </ul>
+  </nav>
+</aside>
